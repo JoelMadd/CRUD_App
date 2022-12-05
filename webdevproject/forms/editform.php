@@ -1,10 +1,10 @@
 <?php
-    include_once(|"../dbConnect/mysqlconfig_connection.php");
+    include_once("../dbConnection/mysqlconfig_connection.php");
     $id = $_GET['id'];
-    $result = mysqli_query($dbc, "SELECT * FROM tblsubject WHERE subject_id = $id");
+    $result = mysqli_query($dbc, "SELECT * FROM tblsubjects WHERE subject_id = $id");
     while($res= mysqli_fetch_array($result)) {
-        $code = $res['subject_code'];
-        $name = $res['subject_name'];
+        $code = $res['subject_Code'];
+        $name = $res['subject_Name'];
     }
 ?>
 
@@ -20,7 +20,7 @@
     <h1>Edit Subject</h1>
     <a href="../index.php">Home</a>
     <br/><br/>
-    <form name="form1" method = "post" action="../functions/edit/php">
+    <form name="form1" method = "post" action="../functions/edit.php">
         <table border = "0">
             <tr>
                 <td>Subject code</td>
